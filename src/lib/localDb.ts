@@ -132,7 +132,11 @@ class LocalDatabase {
 
   public verifyAdmin(): AdminProfile {
     const session = this.getSession();
-    if (!session || !this.data.admin || this.data.admin.id !== session.adminId) {
+    const token = typeof localStorage !== 'undefined' ? localStorage.getItem('family_points_jwt') : null;
+    const tokenAdminId = token && token.startsWith('local_token_') ? token.replace('local_token_', '') : null;
+    const adminId = session?.adminId || tokenAdminId;
+
+    if (!adminId || !this.data.admin || (this.data.admin.id !== adminId && this.data.admin.id !== session?.adminId)) {
       throw new Error('Authentication required. Please log in.');
     }
     return {

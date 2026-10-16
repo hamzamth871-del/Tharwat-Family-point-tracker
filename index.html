@@ -16,6 +16,13 @@
     <link rel="manifest" href="/manifest.json" />
   </head>
   <body>
+    <script>
+      window.addEventListener('unhandledrejection', function(event) {
+        if (event.reason && (String(event.reason).includes('WebSocket') || event.reason.message?.includes('WebSocket'))) {
+          event.preventDefault();
+        }
+      });
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
