@@ -1,0 +1,8 @@
+{
+  "name": "Family Points",
+  "description": "Private family responsibility, task tracking, weekly points ledger, and rewards management application.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
