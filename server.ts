@@ -3,8 +3,8 @@ import cookieParser from 'cookie-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import { authRouter } from './server/routes/auth.js';
-import { familyRouter } from './server/routes/family.js';
+import { authRouter } from './server/routes/auth.ts';
+import { familyRouter } from './server/routes/family.ts';
 
 dotenv.config();
 

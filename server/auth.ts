@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { Request, Response, NextFunction } from 'express';
-import { db } from './db.js';
+import type { Request, Response, NextFunction } from 'express';
+import { db } from './db.ts';
 
 export interface AuthTokenPayload {
   adminId: string;

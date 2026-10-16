@@ -1,8 +1,8 @@
-import { Router, Response } from 'express';
-import { db, Child, Task, TaskCompletion, PointTransaction, Reward, RewardRedemption, FamilySettings } from '../db.js';
-import { requireAdmin, AuthenticatedRequest } from '../auth.js';
+import express, { type Response } from 'express';
+import { db, type Child, type Task, type TaskCompletion, type PointTransaction, type Reward, type RewardRedemption, type FamilySettings } from '../db.ts';
+import { requireAdmin, type AuthenticatedRequest } from '../auth.ts';
 
-export const familyRouter = Router();
+export const familyRouter = express.Router();
 
 // Apply auth to all family routes
 familyRouter.use(requireAdmin);

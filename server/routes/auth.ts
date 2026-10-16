@@ -1,8 +1,8 @@
-import { Router, Response } from 'express';
-import { db } from '../db.js';
-import { hashPassword, comparePassword, generateToken, requireAdmin, AuthenticatedRequest } from '../auth.js';
+import express, { type Response } from 'express';
+import { db } from '../db.ts';
+import { hashPassword, comparePassword, generateToken, requireAdmin, type AuthenticatedRequest } from '../auth.ts';
 
-export const authRouter = Router();
+export const authRouter = express.Router();
 
 // Check if app has been initialized
 authRouter.get('/status', (_req, res) => {
